@@ -52,7 +52,7 @@ streamlit.write('The user entered ', fruit_choice)
 # Output it the screen as a table.
 
 # Don't run anything past here while we troubleshoot
-streamlit.stop()
+# streamlit.stop()
 
 # my_cur = my_cnx.cursor()
 # my_cur.execute("SELECT * FROM fruit_load_list")
@@ -69,7 +69,7 @@ def get_fruit_load_list():
     
 if streamlit.button('Get fruit load list'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-    my_data_rows=get_fruit_load_list()
+    my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
 
 add_my_fruit = streamlit.text_input('What fruit would you like to Add?','Jackfruit')
